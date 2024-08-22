@@ -23,31 +23,6 @@ variable "resource_prefix" {
   default     = ""
 }
 
-# variable "create_storage_account" {
-#   description = "Whether to create storage account and use it for all backups"
-#   default     = true
-# }
-
-# variable "storage_account_resource_group_name" {
-#   description = "A container that holds related resources for an Azure solution"
-#   default     = ""
-# }
-
-# variable "storage_account_name" {
-#   description = "(Optional) Indicates the name of the storage account to either use or create"
-#   default     = ""
-# }
-
-# variable "storage_account_tier" {
-#   description = "(Optional) Indicates the storage acccount tier"
-#   default     = ""
-# }
-
-# variable "storage_account_replication_type" {
-#   description = "(Optional) Indicates the storage account replication type"
-#   default     = "LZR"
-# }
-
 variable "recovery_services_vault_name" {
   description = "(Optional) Indicates the name of recovery services vault to be created"
   default     = ""
