@@ -37,20 +37,20 @@ variable "recovery_services_vault_storage_mode" {
   description = "(Optional) Indicates the mode for the recovery storage vault"
   default     = "LocallyRedundant"
 
-  validation {
-    condition = contains(["LocallyRedundant"], var.recovery_services_vault_storage_mode)
-    error_message = "The value must be set to one of the following: LocallyRedundant"
-  }
+  # validation {
+  #   condition = contains(["LocallyRedundant"], var.recovery_services_vault_storage_mode)
+  #   error_message = "The value must be set to one of the following: LocallyRedundant"
+  # }
 }
 
 variable "backup_policy_type" {
   description = "(Optional) Indicates which version type to use when creating the backup policy"
   default     = "V2"
 
-  validation {
-    condition = contains(["V1","V2"], var.backup_policy_type)
-    error_message = "The value must be set to one of the following: V1, V2"
-  }
+  # validation {
+  #   condition = contains(["V1","V2"], var.backup_policy_type)
+  #   error_message = "The value must be set to one of the following: V1, V2"
+  # }
 }
 
 variable "backup_policy_time_zone" {
@@ -62,10 +62,10 @@ variable "backup_policy_frequency" {
   description = "(Optional) Indicate the fequency to use for the backup policy"
   default     = "Daily"
 
-  validation {
-    condition = contains(["Daily"], var.backup_policy_frequency)
-    error_message = "The value must be set to one of the following: Daily"
-  }
+  # validation {
+  #   condition = contains(["Daily"], var.backup_policy_frequency)
+  #   error_message = "The value must be set to one of the following: Daily"
+  # }
 }
 
 variable "backup_policy_time" {
@@ -90,10 +90,10 @@ variable "backup_policy_retention_weekly_weekdays" {
   type        = set(string)
   default     = [ "Saturday" ]
 
-  validation {
-    condition = can([for s in var.backup_policy_retention_weekly_weekdays : contains([ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ], s)])
-    error_message = "The value must contain one of the following: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday"
-  }
+  # validation {
+  #   condition = can([for s in var.backup_policy_retention_weekly_weekdays : contains([ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ], s)])
+  #   error_message = "The value must contain one of the following: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday"
+  # }
 }
 
 variable "backup_polcy_retention_monthly_count" {
@@ -107,10 +107,10 @@ variable "backup_policy_retention_monthly_weekdays" {
   type        = set(string)
   default     = [ "Saturday" ]
 
-  validation {
-    condition = can([for s in var.backup_policy_retention_monthly_weekdays : contains([ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ], s)])
-    error_message = "The value must contain one of the following: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday"
-  }
+  # validation {
+  #   condition = can([for s in var.backup_policy_retention_monthly_weekdays : contains([ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ], s)])
+  #   error_message = "The value must contain one of the following: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday"
+  # }
 }
 
 variable "backup_virtual_machines" {
